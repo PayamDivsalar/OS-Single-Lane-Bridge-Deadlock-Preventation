@@ -18,7 +18,7 @@ void* north_farmer(void* arg) {
     pthread_mutex_lock(&bridge_mutex);
 
     log_status("North", id, "ENTERING bridge");
-    int t = rand() % 3 + 1;  // 1..3 seconds
+    int t = rand() % 3 + 1;
     sleep(t);
     char buf[64];
     snprintf(buf, sizeof(buf), "LEAVING bridge after %d sec", t);
@@ -36,7 +36,7 @@ void* south_farmer(void* arg) {
     pthread_mutex_lock(&bridge_mutex);
 
     log_status("South", id, "ENTERING bridge");
-    int t = rand() % 3 + 1;  // 1..3 seconds
+    int t = rand() % 3 + 1;
     sleep(t);
     char buf[64];
     snprintf(buf, sizeof(buf), "LEAVING bridge after %d sec", t);
